@@ -1,0 +1,24 @@
+[color]
+	ui = auto
+[core]
+	editor = vim
+	pager = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -rx1,5
+[user]
+	name = "Ashwanth Goli"
+[alias]
+	#logs = log --pretty=format:\"%h - %an, %ar : %s\"
+	logs = log --pretty=format:\"%Cred %h %Creset - %Cgreen %an, %ar : %Creset %s\"
+	d = difftool
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[http]
+	cookiefile = /usr2/ashwanth/.gitcookies
+[sendemail]
+	#smtpuser =
+	#smtpserver =
+	#smtpencryption = ssl
+	#smtpserverport =
+	#smtppass =
+	suppresscc = self
