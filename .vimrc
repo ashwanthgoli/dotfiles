@@ -2,8 +2,10 @@ syntax enable
 set t_Co=256
 set background=dark
 "colorscheme base16-atelierdune
-colorscheme molokai
+colorscheme gruvbox
+"let g:molokai_original = 1
 
+set laststatus=0
 set ttyfast
 set nocompatible
 set backspace=2
@@ -59,7 +61,7 @@ Plug 'tpope/vim-fugitive'
 
 " Add plugins to &runtimepath
 call plug#end()
-set tags=./tags;/local/mnt/workspace/ashwanth/
+set tags=./tags;/home/ashwanth/
 
 source ~/.vim/cscope_maps.vim
 

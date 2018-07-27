@@ -1,8 +1,8 @@
 [color]
-	ui = auto
+	ui = true
 [core]
 	editor = vim
-	pager = /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less -rx1,5
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [user]
 	name = "Ashwanth Goli"
 [alias]
@@ -14,7 +14,7 @@
 [difftool]
 	prompt = false
 [http]
-	cookiefile = /usr2/ashwanth/.gitcookies
+	cookiefile = /home/ashwanth/.gitcookies
 [sendemail]
 	#smtpuser =
 	#smtpserver =
@@ -22,3 +22,15 @@
 	#smtpserverport =
 	#smtppass =
 	suppresscc = self
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
