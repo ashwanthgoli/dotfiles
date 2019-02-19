@@ -1,0 +1,36 @@
+"colorscheme monokai
+
+set number
+set nowrap
+set hlsearch
+
+set tabstop=2 "set the no. of columns that tab expands to in insert mode
+set expandtab "donot expand to spaces"
+set shiftwidth=2 "tabstop for >> << normal mode
+syntax on
+set autoindent
+set smartindent
+set pastetoggle=<f5>
+set cursorline
+set mouse=r
+set wildmenu
+set wildmode=list:longest,full
+set cc=81
+set scrolloff=5
+filetype plugin on
+
+nnoremap <Space>/ :action FindInPath<cr>
+
+nnoremp <Space>y "*y
+
+" code navigation
+"Use C+] instead
+nnoremap <Space>] :action GotoImplementation<cr>
+"Use Alt+3 instead
+nnoremap <Space>f :action GotoFile<cr>
+nnoremap <Space>u :action FindUsages<cr>
+nnoremap <Space>e :action SearchEverywhere<cr>
+nnoremap <Space>s :action GotoSymbol<cr>
+nnoremap <Space>c :action GotoClass<cr>
+nnoremap <F8> :action FileStructurePopup<cr>
+nnoremap <Space><Tab> :action VimFilePrevious<cr>
