@@ -4,9 +4,6 @@ set number
 set nowrap
 set hlsearch
 
-set tabstop=2 "set the no. of columns that tab expands to in insert mode
-set expandtab "donot expand to spaces"
-set shiftwidth=2 "tabstop for >> << normal mode
 syntax on
 set autoindent
 set smartindent
@@ -15,7 +12,7 @@ set cursorline
 set mouse=r
 set wildmenu
 set wildmode=list:longest,full
-set cc=81
+set cc=101
 set scrolloff=5
 filetype plugin on
 
@@ -33,4 +30,5 @@ nnoremap <Space>e :action SearchEverywhere<cr>
 nnoremap <Space>s :action GotoSymbol<cr>
 nnoremap <Space>c :action GotoClass<cr>
 nnoremap <F8> :action FileStructurePopup<cr>
+nnoremap <Space>t :action FileStructurePopup<cr>
 nnoremap <Space><Tab> :action VimFilePrevious<cr>

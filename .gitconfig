@@ -7,7 +7,7 @@
 	name = "Ashwanth Goli"
 [alias]
 	#logs = log --pretty=format:\"%h - %an, %ar : %s\"
-	logs = log --pretty=format:\"%Cred %h %Creset - %Cgreen %an, %ar : %Creset %s\"
+	logs = log --graph --pretty=format:\"%Cred %h %Creset - %Cgreen %an, %ar : %Creset %s\"
 	d = difftool
 [diff]
 	tool = vimdiff
@@ -34,3 +34,7 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[alias]
+    co = checkout
+    cp = cherry-pick
+    br = branch
