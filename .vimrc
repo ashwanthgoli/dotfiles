@@ -1,16 +1,15 @@
-syntax enable
-"set t_Co=256
-"set background=dark
-"colorscheme Tomorrow-Night-Eighties
-let python_highlight_all=1
-
+set backspace=indent,eol,start
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-"colorscheme challenger_deep
+let ayucolor="mirage"
+colorscheme ayu
 
-set laststatus=0
+let python_highlight_all=1
+
+set noignorecase
+set laststatus=2
 set ttyfast
 set nocompatible
 set backspace=2
@@ -23,42 +22,53 @@ set hlsearch
 "set omnifunc
 
 set tabstop=4 "set the no. of columns that tab expands to in insert mode
-set expandtab "donot expand to spaces"
-set shiftwidth=4 "tabstop for >> << normal mode
+"set expandtab "donot expand to spaces"
+"set shiftwidth=4 "tabstop for >> << normal mode
 syntax on
-filetype plugin indent on
+filetype on
+filetype indent on
+filetype plugin on
 set autoindent
 set smartindent
 set pastetoggle=<f5>
-"set cursorline
+set cursorline
 set mouse=r
 set wildmenu
 set wildmode=list:longest,full
 set cc=81
-set scrolloff=5
-filetype plugin on
+"set scrolloff=5
 
-"Vim plug
+"netrw
+let g:netrw_winsize = 25
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+
 call plug#begin('~/.vim/plugged')
+Plug 'ayu-theme/ayu-vim'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+
 Plug 'majutsushi/tagbar'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'mhinz/vim-signify'
-Plug 'psliwka/vim-smoothie'
+"Plug 'psliwka/vim-smoothie'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'fatih/vim-go'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-vinegar'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'sebdah/vim-delve'
 
-"Plug 'tpope/vim-fugitive'
-"Plug 'junegunn/goyo.vim'
-"Plug 'junegunn/limelight.vim'
-
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
+Plug 'editorconfig/editorconfig-vim'
 " Add plugins to &runtimepath
 call plug#end()
-
-nmap <F8> :TagbarToggle<CR>
 
 "Syntactic
 set statusline+=%#warningmsg#
@@ -71,4 +81,21 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-nnoremap <C-w>E :SyntasticCheck<CR>
+nnoremap <Leader>E :SyntasticCheck<CR>
+
+let g:airline_theme='molokai'
+let g:airline#extensions#tabline#enabled = 0
+
+let g:airline#extensions#default#layout = [
+    \ [ 'a', 'c' ],
+    \ [ 'x', 'z', 'error', 'warning' ]
+    \ ]
+
+map <Space> <leader>
+nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap <Leader>e :Buffers<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>u :GoReferrers<CR>
+nnoremap <Leader>] :GoImplements<CR>
+nnoremap <Leader>[ :GoDefPop<CR>
+nnoremap <Leader>1 :NERDTreeToggle %<CR>
